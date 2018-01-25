@@ -1,8 +1,7 @@
 Package: myutilitypackage
 Title: Helper Functions for Feature Engineering
 Version: 0.0.0.9000
-Authors@R: person("Tae Wook Ha", "Developer", role = c("aut", "cre"),
-email = "taeha@cisco.com")
+Authors@R: person("Tae Wook Ha", "Developer", role = c("aut", "cre"), email = "taeha@cisco.com")
 Description: This package is useful for doing EDA and feature engineering
 Depends: R (>= 3.4.3)
 License: MIT
