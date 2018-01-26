@@ -10,9 +10,9 @@
 #' @param a train data table
 #' @param a test data table
 #' @param number of k in kmeans clustering
-#' @return a data table with added features
+#' @return a list with finished two data tables
 #' @export
-fe_cluster <- function(DT, test = "None", predInClust = 5) {
+fe_cluster <- function(DT, test, predInClust = 5) {
   # This function takes in a DT and filters only numeric variable.
   # performs k means with prdInClust in one data table
   # returns data table with added features. cluster, and distance from each cluster.
