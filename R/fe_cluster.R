@@ -1,15 +1,3 @@
-#' Feature Engineering Clustering
-#'
-#' This function takes in a data table and a desired number of features in a cluster. This function will filter only
-#' numerical features first and cluster them with randomly picked numerical features. the final data table will have added
-#' clustered id's and distance to centroids added
-#' @import dplyr
-#' @import data.table
-#' @import fpc
-#' @importFrom FNN get.knnx unbox
-#' @param a data table
-#' @return a data table with added features
-#' @export
 
 # Declaring Helper function
 preprocess_dt <- function(df) {
@@ -35,6 +23,18 @@ getDistance <- function(p1, p2) {
   return(sqrt(sum((p1 - p2)^2)))
 }
 
+#' Feature Engineering Clustering
+#'
+#' This function takes in a data table and a desired number of features in a cluster. This function will filter only
+#' numerical features first and cluster them with randomly picked numerical features. the final data table will have added
+#' clustered id's and distance to centroids added
+#' @import dplyr
+#' @import data.table
+#' @import fpc
+#' @importFrom FNN get.knnx unbox
+#' @param a data table
+#' @return a data table with added features
+#' @export
 fe_cluster <- function(DT, test = "None", predInClust = 5) {
   # This function takes in a DT and filters only numeric variable.
   # performs k means with prdInClust in one data table
