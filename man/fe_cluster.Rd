@@ -4,10 +4,14 @@
 \alias{fe_cluster}
 \title{Feature Engineering Clustering}
 \usage{
-fe_cluster(DT, predInClust = 5)
+fe_cluster(DT, test = "None", predInClust = 5)
 }
 \arguments{
-\item{a}{data table}
+\item{a}{train data table}
+
+\item{a}{test data table}
+
+\item{number}{of k in kmeans clustering}
 }
 \value{
 a data table with added features

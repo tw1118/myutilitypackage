@@ -1,28 +1,3 @@
-
-# Declaring Helper function
-preprocess_dt <- function(df) {
-  # Removing zero variance column
-  zeroCol <- zeroVar(df)
-  df <- df[, !zeroCol, with = FALSE]
-
-  # Removing unique identifier
-  uniqKey <- findUniqueKey(df)
-  df <- df[, !uniqKey, with = FALSE]
-  return(df)
-}
-
-slice_column <- function(DT, columnNames) {
-  columnNames <- as.vector(columnNames)
-  #columnNames <- as.vector(names(DT))
-
-  DT <- DT[, columnNames, with = FALSE]
-  return(DT)
-}
-
-getDistance <- function(p1, p2) {
-  return(sqrt(sum((p1 - p2)^2)))
-}
-
 #' Feature Engineering Clustering
 #'
 #' This function takes in a data table and a desired number of features in a cluster. This function will filter only
@@ -31,7 +6,7 @@ getDistance <- function(p1, p2) {
 #' @import dplyr
 #' @import data.table
 #' @import fpc
-#' @importFrom FNN get.knnx unbox
+#' @importFrom FNN get.knnx
 #' @param a train data table
 #' @param a test data table
 #' @param number of k in kmeans clustering
@@ -62,7 +37,6 @@ fe_cluster <- function(DT, test = "None", predInClust = 5) {
   DT <- get_num_data(DT)
 
   # apply same pipeline to test data table
-  class(test)
   if (is.data.table(test)) {
     test_cat <- slice_column(test, names(DT_cat))
     test <- slice_column(test, names(DT))
