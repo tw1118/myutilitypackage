@@ -32,7 +32,9 @@ getDistance <- function(p1, p2) {
 #' @import data.table
 #' @import fpc
 #' @importFrom FNN get.knnx unbox
-#' @param a data table
+#' @param a train data table
+#' @param a test data table
+#' @param number of k in kmeans clustering
 #' @return a data table with added features
 #' @export
 fe_cluster <- function(DT, test = "None", predInClust = 5) {
