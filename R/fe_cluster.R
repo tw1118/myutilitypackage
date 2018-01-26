@@ -44,11 +44,16 @@ fe_cluster <- function(DT, test = "None", predInClust = 5) {
 
 
   # Checking if DT is a data table
-  if (!is.data.table(DT) | test == "None") {
-    print("The input is not a data.table or test dataset is not given")
+  if (!is.data.table(DT)) {
+    print("The input train is not a data.table or test dataset is not given")
+    stop()
+  }
+  if (!is.data.table(test)) {
+    print("The input test data is not a data.table or test dataset is not given")
     stop()
   }
 
+  print("here1")
   # preprocess data (eraze zero varaiance predictor, and unique identifier)
   DT <- preprocess_dt(DT)
 
