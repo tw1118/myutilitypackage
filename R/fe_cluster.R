@@ -31,17 +31,17 @@ fe_cluster <- function(DT, test, predInClust = 5) {
   print("here1")
   # preprocess data (eraze zero varaiance predictor, and unique identifier)
   DT <- preprocess_dt(DT)
-
+  print("here2")
   # splitting numeric and categorical data table
   DT_cat <- get_cat_data(DT)
   DT <- get_num_data(DT)
-
+  print("here3")
   # apply same pipeline to test data table
   if (is.data.table(test)) {
     test_cat <- slice_column(test, names(DT_cat))
     test <- slice_column(test, names(DT))
   }
-
+  print("here4")
   # declaring column names to the original table
   colName <- colnames(DT)
 

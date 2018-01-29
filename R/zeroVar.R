@@ -10,7 +10,6 @@ zeroVar <- function(DT) {
   # that have only one value (zero variance predictors)
   # Input : Data table
   # Output : logical vector indicating which columnn(s) has one value for all
-  require(dplyr);require(data.table)
   res <- sapply(DT, function(x) {
     length(unique(x)) == 1
   }

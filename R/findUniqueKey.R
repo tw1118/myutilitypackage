@@ -9,7 +9,6 @@ findUniqueKey <- function(DT) {
   # this function takes in data table and return boolean values of
   # predictor(s) that contains unique key.
   # ex) customer id in customer data table.
-  require(dplyr);require(data.table)
   res <- sapply(DT, function(x) {
     length(unique(x)) == nrow(DT)
   }

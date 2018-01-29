@@ -4,7 +4,7 @@
 \alias{fe_cluster}
 \title{Feature Engineering Clustering}
 \usage{
-fe_cluster(DT, test = "None", predInClust = 5)
+fe_cluster(DT, test, predInClust = 5)
 }
 \arguments{
 \item{a}{train data table}
@@ -14,7 +14,7 @@ fe_cluster(DT, test = "None", predInClust = 5)
 \item{number}{of k in kmeans clustering}
 }
 \value{
-a data table with added features
+a list with finished two data tables
 }
 \description{
 This function takes in a data table and a desired number of features in a cluster. This function will filter only

@@ -13,6 +13,6 @@ preprocess_dt(df)
 a data table
 }
 \description{
-This function will eliminate zero variance column and unique identifier column 
+This function will eliminate zero variance column and unique identifier column
 This is a preliminary step for fe_cluster
 }
